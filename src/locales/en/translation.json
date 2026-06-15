@@ -1,0 +1,59 @@
+{
+  "app": {
+    "title": "My Birthday\nGuesser (MBG)",
+    "cardOf": "Card {{current}} of {{total}}"
+  },
+  "start": "Start",
+  "rules": {
+    "button": "Rules",
+    "title": "Rules of the Game",
+    "text1": "We'll give you cards with numbers on them. Each card has a set of numbers.",
+    "text2": "You only need to mark the cards that contain your birthday date or skip the cards that don't contain your birthday date."
+  },
+  "settings": {
+    "button": "Settings",
+    "title": "Settings",
+    "description": "Not much to configure here, just some basic settings for you to customize your experience.",
+    "selectLanguage": "SELECT LANGUAGE",
+    "bgm": "BGM {{status}}",
+    "sfx": "SFX {{status}}",
+    "on": "On",
+    "off": "Off"
+  },
+  "credits": {
+    "button": "Credits",
+    "title": "Credits",
+    "musicTrack": "Music track: Innovating Care by Aylex",
+    "source": "Source:",
+    "copyrightFree": "Copyright Free Music for Video"
+  },
+  "creator": {
+    "button": "Creator",
+    "sourceCode": "Source Code"
+  },
+  "quit": {
+    "button": "Quit",
+    "title": "Are you absolutely sure?",
+    "description": "This will close the game. Are you sure you want to leave?",
+    "confirm": "Yes, Quit",
+    "cancel": "No, Take me back"
+  },
+  "mainMenu": "Main Menu",
+  "playAgain": "Play Again",
+  "markThisCard": "Mark this card",
+  "skip": "Skip",
+  "scoreResult": {
+    "title": "Your birthday is...",
+    "mystery": "a mystery 🤐",
+    "correct": "Did I guess it right? 🤔 Or are you just not paying attention?",
+    "incorrect": "Are you even sure you were born? 💀"
+  },
+  "licenses": {
+    "title": "Audio Licenses"
+  },
+  "languages": {
+    "en": "English",
+    "id": "Indonesia",
+    "su": "Sunda"
+  }
+}

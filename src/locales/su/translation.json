@@ -1,0 +1,59 @@
+{
+  "app": {
+    "title": "My Birthday\nGuesser (MBG)",
+    "cardOf": "Kartu {{current}} tina {{total}}"
+  },
+  "start": "Mimitian",
+  "rules": {
+    "button": "Aturan",
+    "title": "Aturan Kaulinan",
+    "text1": "Kuring bakal masihan kartu anu eusina angka-angka. Unggal kartu gaduh susunan angka anu tangtu.",
+    "text2": "Anjeun ngan ukur kedah nyirian kartu anu aya tanggal lahir anjeun, atawa ngalangkungan kartu anu henteu ngandung tanggal lahir anjeun."
+  },
+  "settings": {
+    "button": "Setélan",
+    "title": "Setélan",
+    "description": "Teu seueur anu tiasa disetél di dieu, ngan sababaraha setélan dasar pikeun nyaluyukeun pangalaman anjeun.",
+    "selectLanguage": "PILIH BASA",
+    "bgm": "BGM {{status}}",
+    "sfx": "SFX {{status}}",
+    "on": "Hurung",
+    "off": "Pareum"
+  },
+  "credits": {
+    "button": "Kredit",
+    "title": "Kredit",
+    "musicTrack": "Lagu: Innovating Care ku Aylex",
+    "source": "Sumber:",
+    "copyrightFree": "Musik Bébas Hak Cipta pikeun Vidéo"
+  },
+  "creator": {
+    "button": "Nu Ngadamel",
+    "sourceCode": "Kodingan Sumber"
+  },
+  "quit": {
+    "button": "Kaluar",
+    "title": "Anjeun yakin pisan?",
+    "description": "Ieu bakal nutup kaulinan. Anjeun badé kaluar?",
+    "confirm": "Enya, Kaluar",
+    "cancel": "Henteu ah"
+  },
+  "mainMenu": "Menu Utama",
+  "playAgain": "Maén Deui",
+  "markThisCard": "Cirian Kartu Ieu",
+  "skip": "Liwat",
+  "scoreResult": {
+    "title": "Tanggal lahir anjeun nyaéta...",
+    "mystery": "Gaib 🤐",
+    "correct": "Leres teu tebakan abdi? 🤔",
+    "incorrect": "Anjeun yakin kantos lahir? 💀"
+  },
+  "licenses": {
+    "title": "Lisénsi Audio"
+  },
+  "languages": {
+    "en": "English",
+    "id": "Indonesia",
+    "su": "Sunda"
+  }
+}

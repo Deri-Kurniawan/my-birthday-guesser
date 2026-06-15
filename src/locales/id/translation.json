@@ -1,0 +1,59 @@
+{
+  "app": {
+    "title": "My Birthday\nGuesser (MBG)",
+    "cardOf": "Kartu {{current}} dari {{total}}"
+  },
+  "start": "Mulai",
+  "rules": {
+    "button": "Aturan",
+    "title": "Aturan Permainan",
+    "text1": "Kami akan memberikan kartu berisi angka-angka. Setiap kartu memiliki kumpulan angka tertentu.",
+    "text2": "Kamu hanya perlu menandai kartu yang berisi tanggal ulang tahunmu atau lewati kartu yang tidak berisi tanggal ulang tahunmu."
+  },
+  "settings": {
+    "button": "Pengaturan",
+    "title": "Pengaturan",
+    "description": "Tidak banyak yang bisa diatur di sini, hanya beberapa pengaturan dasar untuk menyesuaikan pengalamanmu.",
+    "selectLanguage": "PILIH BAHASA",
+    "bgm": "BGM {{status}}",
+    "sfx": "SFX {{status}}",
+    "on": "Hidup",
+    "off": "Mati"
+  },
+  "credits": {
+    "button": "Kredit",
+    "title": "Kredit",
+    "musicTrack": "Lagu: Innovating Care oleh Aylex",
+    "source": "Sumber:",
+    "copyrightFree": "Musik Bebas Royalti untuk Video"
+  },
+  "creator": {
+    "button": "Pembuat",
+    "sourceCode": "Kode Sumber"
+  },
+  "quit": {
+    "button": "Keluar",
+    "title": "Apakah kamu yakin?",
+    "description": "Ini akan menutup permainan. Apakah kamu yakin ingin keluar?",
+    "confirm": "Ya, Keluar",
+    "cancel": "Tidak"
+  },
+  "mainMenu": "Menu Utama",
+  "playAgain": "Main Lagi",
+  "markThisCard": "Tandai kartu ini",
+  "skip": "Lewati",
+  "scoreResult": {
+    "title": "Tanggal lahirmu adalah...",
+    "mystery": "Misteri 🤐",
+    "correct": "Apa tebakanku benar? 🤔 Atau kamu memang tidak fokus saat menjawab",
+    "incorrect": "Apa kamu yakin pernah lahir? 💀"
+  },
+  "licenses": {
+    "title": "Lisensi Audio"
+  },
+  "languages": {
+    "en": "English",
+    "id": "Indonesia",
+    "su": "Sunda"
+  }
+}

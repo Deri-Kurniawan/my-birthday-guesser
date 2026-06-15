@@ -1,0 +1,16 @@
+import { useCallback, useState } from "react"
+
+export function useDisclosure(initialState: boolean = false) {
+    const [isOpen, setIsOpen] = useState(initialState)
+    const onOpen = useCallback(() => setIsOpen(true), [])
+    const onClose = useCallback(() => setIsOpen(false), [])
+    const onToggle = useCallback(() => setIsOpen((prev) => !prev), [])
+    return {
+        isOpen,
+        handler: {
+            open: onOpen,
+            close: onClose,
+            toggle: onToggle
+        }
+    }
+}
