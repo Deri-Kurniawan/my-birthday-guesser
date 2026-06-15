@@ -1,14 +1,48 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Birthday Guesser</title>
-    <meta name="description" content="A fun game to guess your birthday!" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>My Birthday Guesser by Deri Kurniawan</title>
+  <meta name="description"
+    content="A fun web game that guesses your birthday! Answer a few cards and see if we can figure out your birth date. Play in English, Indonesian, or Sundanese." />
+  <meta name="keywords" content="birthday guesser, birthday game, guess my birthday, fun web game, math trick game" />
+  <meta name="author" content="Deri Kurniawan" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mbg.derikn.com/" />
+  <meta property="og:title" content="My Birthday Guesser" />
+  <meta property="og:description"
+    content="A fun web game that guesses your birthday! Answer a few cards and see if we can figure out your birth date." />
+  <meta property="og:image" content="https://mbg.derikn.com/og-image.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://mbg.derikn.com/" />
+  <meta name="twitter:title" content="My Birthday Guesser" />
+  <meta name="twitter:description"
+    content="A fun web game that guesses your birthday! Answer a few cards and see if we can figure out your birth date." />
+  <meta name="twitter:image" content="https://mbg.derikn.com/og-image.png" />
+
+  <link rel="canonical" href="https://mbg.derikn.com/" />
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="MBG" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Audio Preload -->
+  <link rel="preload" href="/assets/audio/bgm.mp3" as="audio" type="audio/mpeg" />
+  <link rel="preload" href="/assets/audio/click.mp3" as="audio" type="audio/mpeg" />
+  <link rel="preload" href="/assets/audio/result.mp3" as="audio" type="audio/mpeg" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>
