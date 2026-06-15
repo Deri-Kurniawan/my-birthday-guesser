@@ -52,7 +52,7 @@ bun run build
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-> Audio assets are **not** covered by the MIT License — each has its own license. See [Credits](#credits) below.
+> Audio assets are **not** covered by the MIT License — each has its own license. See [Credits](#credits) for details. and please respect the original creators' licenses when using or distributing the audio files.
 
 ## Credits
 
