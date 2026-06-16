@@ -1,12 +1,13 @@
+import { AnimatePresence, motion } from "framer-motion"
 import { useEffect } from "react"
 import { useTranslation } from "react-i18next"
-import { useGameManager } from "./hooks/useGameManager"
-import MainMenuButton from "./components/MainMenuButton"
 import CardFaceGrid from "./components/CardFaceGrid"
-import MarkThisCardButton from "./components/MarkThisCardButton"
-import SkipThisCardButton from "./components/SkipThisCardButton"
-import ScoreResultDialog from "./components/ScoreResultDialog"
 import MainMenu from "./components/MainMenu"
+import MainMenuButton from "./components/MainMenuButton"
+import MarkThisCardButton from "./components/MarkThisCardButton"
+import ScoreResultDialog from "./components/ScoreResultDialog"
+import SkipThisCardButton from "./components/SkipThisCardButton"
+import { useGameManager } from "./hooks/useGameManager"
 
 
 const App = () => {
@@ -26,13 +27,22 @@ const App = () => {
   }, [isGameOver, playResultAudio])
 
   return (
-    <>
+    <AnimatePresence mode="wait" initial={false}>
       {isGameStarted ? (
-        <div className="min-h-screen bg-[#f5f0e8] flex items-center justify-center p-4 font-mono">
+        <motion.div
+          key="game"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
+          className="min-h-screen flex items-center justify-center p-4 font-mono"
+        >
           <div className="flex flex-col gap-4">
             <MainMenuButton />
-            <div className="border-4 border-black shadow-[6px_6px_0px_#000] p-2 md:p-4 bg-[#f5f0e8]">
-              <h2 className="text-xl font-bold mb-4">{t("app.cardOf", { current: currentCardDataIndex + 1, total: totalCards })}</h2>
+            <div className="border-4 border-black shadow-[6px_6px_0px_#000] p-2 md:p-4">
+              <h2 className="text-xl font-bold mb-4">
+                {t("app.cardOf", { current: currentCardDataIndex + 1, total: totalCards })}
+              </h2>
               <CardFaceGrid />
               <div className="flex justify-evenly mt-4 gap-4 items-center">
                 <MarkThisCardButton className="flex-1" />
@@ -41,11 +51,19 @@ const App = () => {
             </div>
             <ScoreResultDialog />
           </div>
-        </div>
+        </motion.div>
       ) : (
-        <MainMenu />
+        <motion.div
+          key="menu"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
+        >
+          <MainMenu />
+        </motion.div>
       )}
-    </>
+    </AnimatePresence>
   )
 }
 
