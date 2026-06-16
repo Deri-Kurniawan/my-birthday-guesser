@@ -1,7 +1,6 @@
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { useGameManager } from "../../hooks/useGameManager";
-import { useSoundEffect } from "../../hooks/useSoundEffect";
 import { cn } from "../../lib/utils";
 
 const buttonVariants = cva(
@@ -41,8 +40,7 @@ function Button({
     VariantProps<typeof buttonVariants> & {
         asChild?: boolean;
     }) {
-    const { isSoundEffectEnabled } = useGameManager()
-    const { playClick } = useSoundEffect(isSoundEffectEnabled)
+    const { playClickAudio } = useGameManager()
     const Comp = asChild ? Slot : "button";
 
     return (
@@ -50,7 +48,7 @@ function Button({
             data-slot="button"
             className={cn(buttonVariants({ variant, size, className }))}
             onClick={(e) => {
-                playClick()
+                playClickAudio()
                 onClick?.(e)
             }}
             {...props}

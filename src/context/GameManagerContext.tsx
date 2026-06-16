@@ -20,6 +20,8 @@ interface GameManagerContextValue {
   skipcurrentCardData: () => void;
   toggleBgMusic: () => void;
   toggleSoundEffect: () => void;
+  playClickAudio: () => void;
+  playResultAudio: () => void;
   setLanguage: (lang: string) => void;
 }
 

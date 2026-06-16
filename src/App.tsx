@@ -1,7 +1,6 @@
 import { useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { useGameManager } from "./hooks/useGameManager"
-import { useSoundEffect } from "./hooks/useSoundEffect"
 import MainMenuButton from "./components/MainMenuButton"
 import CardFaceGrid from "./components/CardFaceGrid"
 import MarkThisCardButton from "./components/MarkThisCardButton"
@@ -14,18 +13,17 @@ const App = () => {
   const {
     isGameStarted,
     isGameOver,
-    isSoundEffectEnabled,
+    playResultAudio,
     currentCardDataIndex,
     totalCards,
   } = useGameManager()
-  const { playResult: playResultSoundEffect } = useSoundEffect(isSoundEffectEnabled)
   const { t } = useTranslation()
 
   useEffect(() => {
     if (isGameOver) {
-      playResultSoundEffect()
+      playResultAudio()
     }
-  }, [isGameOver, playResultSoundEffect])
+  }, [isGameOver, playResultAudio])
 
   return (
     <>

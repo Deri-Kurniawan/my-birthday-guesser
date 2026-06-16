@@ -4,16 +4,14 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import type * as React from "react";
 import { useGameManager } from "../../hooks/useGameManager";
-import { useSoundEffect } from "../../hooks/useSoundEffect";
 import { cn } from "../../lib/utils";
 
 function Select({
     ...props
 }: React.ComponentProps<typeof SelectPrimitive.Root>) {
-    const { isSoundEffectEnabled } = useGameManager()
-    const { playClick } = useSoundEffect(isSoundEffectEnabled)
+    const { playClickAudio } = useGameManager()
     return <SelectPrimitive.Root data-slot="select" {...props} onOpenChange={(open) => {
-        playClick()
+        playClickAudio()
         props.onOpenChange?.(open)
     }} />;
 }

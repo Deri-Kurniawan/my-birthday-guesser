@@ -6,6 +6,21 @@ import { useAudio } from "../hooks/useAudio"
 import { useDisclosure } from "../hooks/useDisclosure"
 import { loadSettings, saveSettings } from "../lib/utils"
 
+function useSoundEffect(enabled: boolean) {
+  const { play: playClickRaw } = useAudio("/assets/audio/click.mp3", false, 1, true)
+  const { play: playResultRaw } = useAudio("/assets/audio/result.mp3", false, 1, false)
+
+  const playClickAudio = useCallback(() => {
+    if (enabled) playClickRaw()
+  }, [enabled, playClickRaw])
+
+  const playResultAudio = useCallback(() => {
+    if (enabled) playResultRaw()
+  }, [enabled, playResultRaw])
+
+  return { playClick: playClickAudio, playResult: playResultAudio }
+}
+
 const LS_KEY = "birthday-guesser-settings"
 
 interface GameManagerProviderProps {
@@ -29,7 +44,8 @@ export const GameManagerProvider = ({ children, initialData = defaultData }: Gam
     const [answers, setAnswers] = useState<number[]>([])
     const [currentCardDataIndex, setCurrentCardDataIndex] = useState<number>(0)
 
-    const { play: playBgm, stop: stopBgm } = useAudio("/assets/audio/bgm.mp3", true, 0.5)
+    const { play: playBgm, stop: stopBgm } = useAudio("/assets/audio/bgm.mp3", true, 0.5, false)
+    const { playClick: playClickAudio, playResult: playResultAudio } = useSoundEffect(isSoundEffectEnabled)
 
     const cards = initialData
     const totalCards = cards.length
@@ -124,6 +140,8 @@ export const GameManagerProvider = ({ children, initialData = defaultData }: Gam
             skipcurrentCardData: skipCurrentCard,
             toggleBgMusic,
             toggleSoundEffect: soundEffectHandler.toggle,
+            playClickAudio,
+            playResultAudio,
             setLanguage,
         }}>
             {children}

@@ -1,25 +1,35 @@
-import { useCallback, useRef } from "react"
+import { useCallback, useEffect, useRef } from "react"
 
-export function useAudio(src: string, loop = false, volume = 1) {
+export function useAudio(src: string, loop = false, volume = 1, allowReplay = false) {
   const ref = useRef<HTMLAudioElement | null>(null)
 
-  const play = useCallback(() => {
-    if (!ref.current) {
-      ref.current = new Audio(src)
-      ref.current.preload = "auto"
-      ref.current.loop = loop
-      ref.current.volume = volume
+  useEffect(() => {
+    const audio = new Audio(src)
+    audio.preload = "auto"
+    audio.loop = loop
+    audio.volume = volume
+    ref.current = audio
+
+    return () => {
+      audio.pause()
+      audio.src = ""
+      ref.current = null
     }
-    if (!ref.current.paused) return
-    ref.current.currentTime = 0
-    ref.current.play().catch(() => {})
   }, [src, loop, volume])
 
+  const play = useCallback(() => {
+    const audio = ref.current
+    if (!audio) return
+    if (!allowReplay && !audio.paused) return
+    audio.currentTime = 0
+    audio.play().catch(() => {})
+  }, [allowReplay])
+
   const stop = useCallback(() => {
-    if (ref.current) {
-      ref.current.pause()
-      ref.current.currentTime = 0
-    }
+    const audio = ref.current
+    if (!audio) return
+    audio.pause()
+    audio.currentTime = 0
   }, [])
 
   return { play, stop }

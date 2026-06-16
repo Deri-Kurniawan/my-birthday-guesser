@@ -1,6 +1,5 @@
 import { useEffect } from "react"
 import { useGameManager } from "../hooks/useGameManager"
-import { useSoundEffect } from "../hooks/useSoundEffect"
 import CardFaceGrid from "./CardFaceGrid"
 import MainMenu from "./MainMenu"
 import MainMenuButton from "./MainMenuButton"
@@ -12,17 +11,16 @@ const Playground = () => {
     const {
         isGameStarted,
         isGameOver,
-        isSoundEffectEnabled,
+        playResultAudio,
         currentCardDataIndex,
         totalCards,
     } = useGameManager()
-    const { playResult: playResultSoundEffect } = useSoundEffect(isSoundEffectEnabled)
 
     useEffect(() => {
         if (isGameOver) {
-            playResultSoundEffect()
+            playResultAudio()
         }
-    }, [isGameOver, playResultSoundEffect])
+    }, [isGameOver, playResultAudio])
 
     return (
         <>
