@@ -1,6 +1,8 @@
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { XIcon } from "lucide-react";
 import type * as React from "react";
+import { useGameManager } from "../../hooks/useGameManager";
+import { useSoundEffect } from "../../hooks/useSoundEffect";
 import { cn } from "../../lib/utils";
 
 function Dialog({
@@ -75,6 +77,8 @@ function DialogContent({
 }: React.ComponentProps<typeof DialogPrimitive.Content> & {
     showCloseButton?: boolean;
 }) {
+    const { isSoundEffectEnabled } = useGameManager()
+    const { playClick } = useSoundEffect(isSoundEffectEnabled)
     return (
         <DialogPortal>
             <DialogOverlay />
@@ -107,6 +111,9 @@ function DialogContent({
                             "active:translate-x-1 active:translate-y-1 active:shadow-none",
                             "transition-all duration-75 ease-linear",
                         )}
+                        onClick={() => {
+                            playClick()
+                        }}
                     >
                         <XIcon strokeWidth={4} />
                         <span className="sr-only">Close</span>

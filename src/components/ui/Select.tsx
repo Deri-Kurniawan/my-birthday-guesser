@@ -3,13 +3,19 @@
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import type * as React from "react";
-
+import { useGameManager } from "../../hooks/useGameManager";
+import { useSoundEffect } from "../../hooks/useSoundEffect";
 import { cn } from "../../lib/utils";
 
 function Select({
     ...props
 }: React.ComponentProps<typeof SelectPrimitive.Root>) {
-    return <SelectPrimitive.Root data-slot="select" {...props} />;
+    const { isSoundEffectEnabled } = useGameManager()
+    const { playClick } = useSoundEffect(isSoundEffectEnabled)
+    return <SelectPrimitive.Root data-slot="select" {...props} onOpenChange={(open) => {
+        playClick()
+        props.onOpenChange?.(open)
+    }} />;
 }
 
 function SelectGroup({
@@ -230,5 +236,6 @@ export {
     SelectScrollUpButton,
     SelectSeparator,
     SelectTrigger,
-    SelectValue,
+    SelectValue
 };
+
