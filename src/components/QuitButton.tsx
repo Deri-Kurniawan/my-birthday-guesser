@@ -8,8 +8,14 @@ import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, Di
 const QuitButton: FC<ComponentProps<typeof Button>> = (props) => {
     const { t } = useTranslation()
     const onQuit = () => {
-        window.close()
-    }
+        window.close();
+
+        setTimeout(() => {
+            if (!window.closed) {
+                window.location.replace('about:blank');
+            }
+        }, 300);
+    };
 
     return (
         <Dialog>
