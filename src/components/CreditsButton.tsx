@@ -27,17 +27,17 @@ const CreditsButton: FC<ComponentProps<typeof Button>> = (props) => {
                             </p>
                             <div className="space-y-2 text-xs">
                                 <p>
-                                    <span className="font-semibold">BGM:</span> — Innovating Care by Aylex
+                                    <span className="font-semibold">BGM:</span> Innovating Care by Aylex
                                     <br />
                                     <a href="https://freetouse.com/music" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">freetouse.com/music</a>
                                 </p>
                                 <p>
-                                    <span className="font-semibold">Click:</span>
+                                    <span className="font-semibold">Click SFX:</span>
                                     <br />
                                     <a href="https://uppbeat.io/sfx/futuristic-ui-digital-click/167896/56451" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">uppbeat.io</a>
                                 </p>
                                 <p>
-                                    <span className="font-semibold">Result:</span>
+                                    <span className="font-semibold">Result SFX:</span>
                                     <br />
                                     <a href="https://uppbeat.io/sfx/alert-positive-digital-marimba/178987/79620" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">uppbeat.io</a>
                                 </p>

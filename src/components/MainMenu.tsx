@@ -5,6 +5,7 @@ import QuitButton from "./QuitButton";
 import RulesButton from "./RulesButton";
 import SettingsButton from "./SettingsButton";
 import StartButton from "./StartButton";
+import { version } from "../../package.json";
 
 const MainMenu = () => {
     const { t } = useTranslation()
@@ -15,7 +16,7 @@ const MainMenu = () => {
                 <div className="w-full border-4 px-6 py-5 bg-black">
                     <div className="flex justify-between gap-1">
                         <p className="text-yellow-500 text-xl font-black tracking-tight mb-1">✦ ★ ✦</p>
-                        <p className="text-yellow-500 text-xl font-black tracking-tight mb-1">v1.0.0</p>
+                        <p className="text-yellow-500 text-xl font-black tracking-tight mb-1">v{version}</p>
                     </div>
                     <h1 className="text-4xl font-black uppercase text-[#f5f0e8] whitespace-pre-line">
                         {t("app.title")}

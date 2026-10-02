@@ -7,18 +7,18 @@ import { useDisclosure } from "../hooks/useDisclosure"
 import { loadSettings, saveSettings } from "../lib/utils"
 
 function useSoundEffect(enabled: boolean) {
-  const { play: playClickRaw } = useAudio("/assets/audio/click.mp3", false, 1, true)
-  const { play: playResultRaw } = useAudio("/assets/audio/result.mp3", false, 1, false)
+    const { play: playClickRaw } = useAudio("/assets/audio/click.mp3", false, 1, true)
+    const { play: playResultRaw } = useAudio("/assets/audio/result.mp3", false, 1, false)
 
-  const playClickAudio = useCallback(() => {
-    if (enabled) playClickRaw()
-  }, [enabled, playClickRaw])
+    const playClickAudio = useCallback(() => {
+        if (enabled) playClickRaw()
+    }, [enabled, playClickRaw])
 
-  const playResultAudio = useCallback(() => {
-    if (enabled) playResultRaw()
-  }, [enabled, playResultRaw])
+    const playResultAudio = useCallback(() => {
+        if (enabled) playResultRaw()
+    }, [enabled, playResultRaw])
 
-  return { playClick: playClickAudio, playResult: playResultAudio }
+    return { playClick: playClickAudio, playResult: playResultAudio }
 }
 
 const LS_KEY = "birthday-guesser-settings"
@@ -55,11 +55,14 @@ export const GameManagerProvider = ({ children, initialData = defaultData }: Gam
         if (isBgMusicEnabled) playBgm()
     }, [isBgMusicEnabled, playBgm])
 
-    const resetGameState = useCallback(() => {
-        setCurrentCardDataIndex(0)
-        setScore(0)
-        setAnswers([])
+    const resetGameState = useCallback((scoreResetDelayMs = 100) => {
         gameOverHandler.close()
+        setCurrentCardDataIndex(0)
+        setAnswers([])
+        const timeout = setTimeout(() => {
+            setScore(0)
+        }, scoreResetDelayMs)
+        return () => clearTimeout(timeout)
     }, [gameOverHandler])
 
     const startGame = useCallback(() => {
